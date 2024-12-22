@@ -1,0 +1,39 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Определение частиц -->
+    <circle id="particle" r="2" fill="gray" opacity="0.8" />
+
+    <!-- Анимация движения вверх и дрейфа -->
+    <animateMotion id="motion">
+      <mpath xlink:href="#path" />
+    </animateMotion>
+  </defs>
+
+  <!-- Фон -->
+  <rect width="100%" height="100%" fill="#1c1c1c" />
+
+  <!-- Пути движения частиц -->
+  <path id="path" fill="none" stroke="none" d="M400,600 C390,550 410,500 400,0" />
+
+  <!-- Генерация частиц пепла -->
+  <g>
+    <g id="particles">
+      <!-- Множественные частицы -->
+      <use xlink:href="#particle" x="400" y="600">
+        <animateMotion dur="6s" repeatCount="indefinite">
+          <mpath xlink:href="#path" />
+        </animateMotion>
+      </use>
+      <use xlink:href="#particle" x="420" y="620">
+        <animateMotion dur="7s" repeatCount="indefinite">
+          <mpath xlink:href="#path" />
+        </animateMotion>
+      </use>
+      <use xlink:href="#particle" x="380" y="630">
+        <animateMotion dur="5s" repeatCount="indefinite">
+          <mpath xlink:href="#path" />
+        </animateMotion>
+      </use>
+    </g>
+  </g>
+</svg>

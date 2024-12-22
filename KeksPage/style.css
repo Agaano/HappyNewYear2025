@@ -1,0 +1,16 @@
+body {
+    filter: opacity(0);
+}
+
+
+.wrapper {
+    background: url("../mainBackground.webp");
+    width: 100%;
+    background-size: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

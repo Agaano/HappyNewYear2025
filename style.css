@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+.loading {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 50px;
+}
+
+.wrapper {
+    background: url("mainBackground.webp");
+    width: 100%;
+    background-size: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+.modal {
+    position: absolute;
+    transition: 0.5s;
+    width: 100vw;
+    height: 100vh;
+    background-color: #120317;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 25px;
+    z-index: 11;
+}
+
+.modal span {
+    width: 25%;
+    text-align: center;
+    font-size: 25px;
+}
+
+.modal button {
+    font-size: 30px;
+    padding-inline: 35px;
+    padding-block: 10px;
+    background-color: #635959;
+    transition-duration: 0.25s;
+}
+
+.modal button:hover {
+    transform: translateY(-10%);
+}
+
+.modal button:active {
+    transition-duration: 0.05s;
+}
+
+.characters-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    column-gap: 25px;
+}
+
+.character-block {
+    border: 2px solid white;
+    border-radius: 0;
+    width: 200px;
+    height: 700px;
+    opacity: 0.9;
+    transition-duration: 0.25s;
+    cursor:pointer;
+    background-color: #120317;
+    filter: grayscale(1);
+    overflow: hidden;
+}
+
+.character-block > a {
+    width: 100%;
+    height: 100%;
+}
+
+.character-block:hover {
+    width: 400px;
+    opacity: 1;
+}
+
+.nikita-preview:hover {
+    filter: drop-shadow(0 0 30px rgb(0, 255, 64))
+}
+.kirya-preview:hover {
+    filter: drop-shadow(0 0 30px rgb(255, 0, 0))
+}
+
+
+
+.egor-preview {
+    overflow: visible;
+    background: url("EgorPreview.jpg");
+    background-position-x: 75%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.egor-preview:hover {
+    animation: 0.6s infinite normal EgorTextAnimation;
+    border-color: rgb(119, 0, 0);
+}
+
+.egor-preview:hover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,0,0,0.4990371148459384) 50%, rgba(255,0,0,1) 100%);
+    animation: 0.6s infinite normal EgorAfterAnimation;
+}
+
+@keyframes EgorAfterAnimation {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes EgorTextAnimation {
+    0% {
+        filter: drop-shadow(0 0 50px rgb(255, 0, 0))
+                brightness(0.8);
+        background-position-y: 100%;
+        background-size: 100%;
+        border-color: rgb(119, 0, 0);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 100px rgb(255, 0, 0))
+                brightness(1);
+        background-position-y: 95%;
+        background-size: 105%;
+        border-color: rgb(245, 0, 0);
+    }
+}
+
+/*ВОЛОДЯ \/ \/ \/ */
+
+.volodya-preview {    
+    background: url("VolodyaPreview.jpg");
+    background-position-x: 60%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.volodya-preview:hover {
+    position: relative;
+    animation: 0.3s infinite normal VolodyaGlowAnimation;
+    filter: drop-shadow(0 0 30px rgb(255, 145, 0))
+            grayscale(0);   
+}
+
+.volodya-preview:hover::after {
+    content: '';
+    position: absolute;
+    inset-inline: 40px;
+    filter: blur(250px);
+    bottom: 0px;
+    
+    opacity: 0.5;
+    background: linear-gradient(0deg, rgba(255,248,102,1) 0%, rgba(255,124,0,1) 15%, rgba(255,0,0,1) 30%, rgba(255,0,0,0) 60%);
+    animation: 0.6s infinite normal VolodyaAfterAnimation;
+}
+
+.volodya-preview h1 {
+    position: relative;
+    font-family: 'Saira Stencil One', serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: #f0caa7;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    font-size: 500px;
+    transform:  rotate(-25deg)
+    translate(-50%, -50%);
+    transition: 0.15s;
+}
+
+.volodya-preview:hover h1 {
+    opacity: 1;
+    font-size: 70px;
+    animation: 0.3s infinite normal VolodyaTextAnimation;
+}
+
+.caliber {
+    position: absolute;
+    left: 1870px;
+}
+
+
+
+@keyframes VolodyaAfterAnimation {
+    0%, 50%, 100% {
+        opacity: 1;
+        bottom: 0;
+        transform-origin: bottom center;
+        transform: rotate(-45deg);
+        height: 150%;
+    }
+
+    
+    25% {
+        opacity: 1;
+        bottom: 50%;
+        transform-origin: bottom center;
+        transform: rotate(-180deg);
+        height: 150%;
+    }
+
+    75% {
+        opacity: 1;
+        transform-origin: bottom center;
+        bottom: 50%;
+        transform: rotate(180deg);
+        height: 150%;
+    }
+}
+
+@keyframes VolodyaTextAnimation {
+    0% {
+        transform:  rotate(-25deg)
+                    translate(-45%, -50%)
+                    scale(1.025);
+    }
+    100% {
+        transform:  rotate(-25deg)
+                    translate(-45%, -50%)
+                    scale(1);
+    }
+}
+
+@keyframes VolodyaGlowAnimation {
+    0% {
+        filter: drop-shadow(0 -15px 30px rgb(255, 145, 0))
+                grayscale(0)
+                contrast(120%);
+        border-color: rgb(255, 123, 0);
+        background-size: 210%;
+    }
+
+    100% {
+        filter: drop-shadow(0 0 60px rgb(255, 145, 0))
+                grayscale(0)
+                contrast(100%);
+        border-color: rgb(155, 10, 0);
+        background-size: 200%;
+    }
+}
+
+.keks-preview {
+    background: url("KeksPreview.jpg");
+    background-position-x: 20%;
+}
+
+
+.keks-preview:hover {
+    animation: 3s infinite normal KeksGlowAnimation;
+    border-color: white;
+    transition-duration: 0s;
+}
+
+
+
+.keks-preview h1 {
+    position: relative;
+    font-family: 'Chewy', serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2c2621;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-25%);
+    opacity: 0;
+    font-size: 90px;
+    transition-duration: 2s;
+}
+
+.keks-preview:hover h1 {
+    opacity: 1;
+    animation: 3.3s infinite reverse KeksTextAnimation;
+}
+
+@keyframes KeksTextAnimation {
+    0%, 100% {
+        filter: opacity(0.4);
+    }
+    50% {
+        filter: opacity(0.8);
+    }
+}
+
+/* .  . . */
+
+@keyframes KeksGlowAnimation {
+    0%, 75%,  100% {
+        filter: drop-shadow(0 0 60px rgb(255, 255, 255))
+                blur(0px);
+        background-size: 200%;
+    }
+    50%, 25% {
+        filter: drop-shadow(0 0 500px rgb(255, 255, 255))
+                blur(2px);
+        background-size: 250%;
+    }
+}
+
+
+.vova-preview {
+    background: url("VovaPreview.jpg");
+    background-size: cover;
+    background-position: 25%;
+}
+
+.vova-preview:hover {
+    position: relative;
+    animation: 2.5s infinite normal VovaGlowAnimation;
+    border-color: rgb(163, 61, 247);
+}
+
+.vova-preview:hover::after {
+    top: -70px;
+    backdrop-filter: blur(25px);
+    transform: rotate(15deg);
+    animation: 2.5s infinite normal VovaAfterAnimation;
+}
+.vova-preview:hover::before {
+    bottom: -80px;
+    backdrop-filter: blur(25px);
+    transform: rotate(10deg);
+    animation: 2.5s infinite normal VovaAfterAnimation;
+}
+
+.vova-preview:hover::after,
+.vova-preview:hover::before {
+    content: '';
+    position: absolute;
+    inset-inline: -30px;
+    transform-origin: center;
+    background-color: rgba(163, 61, 247, 0.2);
+    border: 3px solid rgba(163, 61, 247);
+    height: 150px;
+}
+
+@keyframes VovaBeforeAnimation {
+    0%, 100% {
+        transform: rotate(-15deg);
+    }
+
+    20%, 60% {
+        transform: rotate(15deg);
+    }
+
+    40%, 80% {
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes VovaAfterAnimation {
+    0%, 100% {
+        transform: rotate(15deg);
+    }
+
+    20%, 60% {
+        transform: rotate(-15deg);
+    }
+
+    40%, 80% {
+        transform: rotate(15deg);
+    }  
+}
+
+@keyframes VovaGlowAnimation {
+
+    /* Камера отдалена */
+    0%, 100% { 
+        background-size: 150%;
+        background-position: 0%;
+        filter: drop-shadow(0 0 100px rgb(163, 61, 247))  
+                contrast(1.5)
+    }
+
+    /* Камера на поваре */
+
+    20%, 60% {
+        background-position: 75%;
+        background-size: 200%;
+        filter: drop-shadow(0 0 160px rgb(163, 61, 247))
+        contrast(0.7)
+    }
+
+    /* Камера на Вове */
+
+    40%, 80% {
+        background-position: 0%;
+        background-size: 200%;
+        filter: drop-shadow(0 0 100px rgb(163, 61, 247))
+        contrast(1.5);
+
+    }
+}
+
+.volodya-preview,
+.nikita-preview,
+.kirya-preview,
+.egor-preview,
+.vova-preview,
+.keks-preview {
+    border:3px solid white;
+    backdrop-filter: blur(15px);
+}
